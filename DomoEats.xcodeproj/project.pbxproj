@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		67194A181C30943E00DAE805 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67194A171C30943E00DAE805 /* AppDelegate.swift */; };
+		67194A1A1C30943E00DAE805 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67194A191C30943E00DAE805 /* ViewController.swift */; };
+		67194A1D1C30943E00DAE805 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67194A1B1C30943E00DAE805 /* Main.storyboard */; };
+		67194A201C30943E00DAE805 /* DomoEats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 67194A1E1C30943E00DAE805 /* DomoEats.xcdatamodeld */; };
+		67194A221C30943E00DAE805 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67194A211C30943E00DAE805 /* Assets.xcassets */; };
+		67194A251C30943E00DAE805 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67194A231C30943E00DAE805 /* LaunchScreen.storyboard */; };
+		67194A301C30943E00DAE805 /* DomoEatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67194A2F1C30943E00DAE805 /* DomoEatsTests.swift */; };
+		67194A3B1C30943E00DAE805 /* DomoEatsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67194A3A1C30943E00DAE805 /* DomoEatsUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		67194A2C1C30943E00DAE805 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67194A0C1C30943E00DAE805 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67194A131C30943E00DAE805;
+			remoteInfo = DomoEats;
+		};
+		67194A371C30943E00DAE805 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67194A0C1C30943E00DAE805 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67194A131C30943E00DAE805;
+			remoteInfo = DomoEats;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		67194A141C30943E00DAE805 /* DomoEats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DomoEats.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		67194A171C30943E00DAE805 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		67194A191C30943E00DAE805 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		67194A1C1C30943E00DAE805 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		67194A1F1C30943E00DAE805 /* DomoEats.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DomoEats.xcdatamodel; sourceTree = "<group>"; };
+		67194A211C30943E00DAE805 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		67194A241C30943E00DAE805 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		67194A261C30943E00DAE805 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67194A2B1C30943E00DAE805 /* DomoEatsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DomoEatsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		67194A2F1C30943E00DAE805 /* DomoEatsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomoEatsTests.swift; sourceTree = "<group>"; };
+		67194A311C30943E00DAE805 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67194A361C30943E00DAE805 /* DomoEatsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DomoEatsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		67194A3A1C30943E00DAE805 /* DomoEatsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomoEatsUITests.swift; sourceTree = "<group>"; };
+		67194A3C1C30943E00DAE805 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		67194A111C30943E00DAE805 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67194A281C30943E00DAE805 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67194A331C30943E00DAE805 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		67194A0B1C30943E00DAE805 = {
+			isa = PBXGroup;
+			children = (
+				67194A161C30943E00DAE805 /* DomoEats */,
+				67194A2E1C30943E00DAE805 /* DomoEatsTests */,
+				67194A391C30943E00DAE805 /* DomoEatsUITests */,
+				67194A151C30943E00DAE805 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		67194A151C30943E00DAE805 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				67194A141C30943E00DAE805 /* DomoEats.app */,
+				67194A2B1C30943E00DAE805 /* DomoEatsTests.xctest */,
+				67194A361C30943E00DAE805 /* DomoEatsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		67194A161C30943E00DAE805 /* DomoEats */ = {
+			isa = PBXGroup;
+			children = (
+				67194A171C30943E00DAE805 /* AppDelegate.swift */,
+				67194A191C30943E00DAE805 /* ViewController.swift */,
+				67194A1B1C30943E00DAE805 /* Main.storyboard */,
+				67194A211C30943E00DAE805 /* Assets.xcassets */,
+				67194A231C30943E00DAE805 /* LaunchScreen.storyboard */,
+				67194A261C30943E00DAE805 /* Info.plist */,
+				67194A1E1C30943E00DAE805 /* DomoEats.xcdatamodeld */,
+			);
+			path = DomoEats;
+			sourceTree = "<group>";
+		};
+		67194A2E1C30943E00DAE805 /* DomoEatsTests */ = {
+			isa = PBXGroup;
+			children = (
+				67194A2F1C30943E00DAE805 /* DomoEatsTests.swift */,
+				67194A311C30943E00DAE805 /* Info.plist */,
+			);
+			path = DomoEatsTests;
+			sourceTree = "<group>";
+		};
+		67194A391C30943E00DAE805 /* DomoEatsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				67194A3A1C30943E00DAE805 /* DomoEatsUITests.swift */,
+				67194A3C1C30943E00DAE805 /* Info.plist */,
+			);
+			path = DomoEatsUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		67194A131C30943E00DAE805 /* DomoEats */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67194A3F1C30943E00DAE805 /* Build configuration list for PBXNativeTarget "DomoEats" */;
+			buildPhases = (
+				67194A101C30943E00DAE805 /* Sources */,
+				67194A111C30943E00DAE805 /* Frameworks */,
+				67194A121C30943E00DAE805 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DomoEats;
+			productName = DomoEats;
+			productReference = 67194A141C30943E00DAE805 /* DomoEats.app */;
+			productType = "com.apple.product-type.application";
+		};
+		67194A2A1C30943E00DAE805 /* DomoEatsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67194A421C30943E00DAE805 /* Build configuration list for PBXNativeTarget "DomoEatsTests" */;
+			buildPhases = (
+				67194A271C30943E00DAE805 /* Sources */,
+				67194A281C30943E00DAE805 /* Frameworks */,
+				67194A291C30943E00DAE805 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				67194A2D1C30943E00DAE805 /* PBXTargetDependency */,
+			);
+			name = DomoEatsTests;
+			productName = DomoEatsTests;
+			productReference = 67194A2B1C30943E00DAE805 /* DomoEatsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		67194A351C30943E00DAE805 /* DomoEatsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67194A451C30943E00DAE805 /* Build configuration list for PBXNativeTarget "DomoEatsUITests" */;
+			buildPhases = (
+				67194A321C30943E00DAE805 /* Sources */,
+				67194A331C30943E00DAE805 /* Frameworks */,
+				67194A341C30943E00DAE805 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				67194A381C30943E00DAE805 /* PBXTargetDependency */,
+			);
+			name = DomoEatsUITests;
+			productName = DomoEatsUITests;
+			productReference = 67194A361C30943E00DAE805 /* DomoEatsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		67194A0C1C30943E00DAE805 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Timothy Barrett";
+				TargetAttributes = {
+					67194A131C30943E00DAE805 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					67194A2A1C30943E00DAE805 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 67194A131C30943E00DAE805;
+					};
+					67194A351C30943E00DAE805 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 67194A131C30943E00DAE805;
+					};
+				};
+			};
+			buildConfigurationList = 67194A0F1C30943E00DAE805 /* Build configuration list for PBXProject "DomoEats" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 67194A0B1C30943E00DAE805;
+			productRefGroup = 67194A151C30943E00DAE805 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				67194A131C30943E00DAE805 /* DomoEats */,
+				67194A2A1C30943E00DAE805 /* DomoEatsTests */,
+				67194A351C30943E00DAE805 /* DomoEatsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		67194A121C30943E00DAE805 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67194A251C30943E00DAE805 /* LaunchScreen.storyboard in Resources */,
+				67194A221C30943E00DAE805 /* Assets.xcassets in Resources */,
+				67194A1D1C30943E00DAE805 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67194A291C30943E00DAE805 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67194A341C30943E00DAE805 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		67194A101C30943E00DAE805 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67194A1A1C30943E00DAE805 /* ViewController.swift in Sources */,
+				67194A201C30943E00DAE805 /* DomoEats.xcdatamodeld in Sources */,
+				67194A181C30943E00DAE805 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67194A271C30943E00DAE805 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67194A301C30943E00DAE805 /* DomoEatsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67194A321C30943E00DAE805 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67194A3B1C30943E00DAE805 /* DomoEatsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		67194A2D1C30943E00DAE805 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67194A131C30943E00DAE805 /* DomoEats */;
+			targetProxy = 67194A2C1C30943E00DAE805 /* PBXContainerItemProxy */;
+		};
+		67194A381C30943E00DAE805 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67194A131C30943E00DAE805 /* DomoEats */;
+			targetProxy = 67194A371C30943E00DAE805 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		67194A1B1C30943E00DAE805 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				67194A1C1C30943E00DAE805 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		67194A231C30943E00DAE805 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				67194A241C30943E00DAE805 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		67194A3D1C30943E00DAE805 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		67194A3E1C30943E00DAE805 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		67194A401C30943E00DAE805 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DomoEats/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.project.DomoEats;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		67194A411C30943E00DAE805 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DomoEats/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.project.DomoEats;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		67194A431C30943E00DAE805 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DomoEatsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.project.DomoEatsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DomoEats.app/DomoEats";
+			};
+			name = Debug;
+		};
+		67194A441C30943E00DAE805 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DomoEatsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.project.DomoEatsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DomoEats.app/DomoEats";
+			};
+			name = Release;
+		};
+		67194A461C30943E00DAE805 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DomoEatsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.project.DomoEatsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DomoEats;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		67194A471C30943E00DAE805 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DomoEatsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.project.DomoEatsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DomoEats;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		67194A0F1C30943E00DAE805 /* Build configuration list for PBXProject "DomoEats" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67194A3D1C30943E00DAE805 /* Debug */,
+				67194A3E1C30943E00DAE805 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67194A3F1C30943E00DAE805 /* Build configuration list for PBXNativeTarget "DomoEats" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67194A401C30943E00DAE805 /* Debug */,
+				67194A411C30943E00DAE805 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		67194A421C30943E00DAE805 /* Build configuration list for PBXNativeTarget "DomoEatsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67194A431C30943E00DAE805 /* Debug */,
+				67194A441C30943E00DAE805 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		67194A451C30943E00DAE805 /* Build configuration list for PBXNativeTarget "DomoEatsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67194A461C30943E00DAE805 /* Debug */,
+				67194A471C30943E00DAE805 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		67194A1E1C30943E00DAE805 /* DomoEats.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				67194A1F1C30943E00DAE805 /* DomoEats.xcdatamodel */,
+			);
+			currentVersion = 67194A1F1C30943E00DAE805 /* DomoEats.xcdatamodel */;
+			path = DomoEats.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 67194A0C1C30943E00DAE805 /* Project object */;
+}
