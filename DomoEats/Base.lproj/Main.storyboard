@@ -19,9 +19,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="QfY-9W-pjx" kind="presentation" identifier="showSignUp" id="EhS-dn-NY2"/>
-                        <segue destination="b8i-Sz-6fV" kind="presentation" identifier="showLogin" id="4ba-cv-EZi"/>
-                        <segue destination="NsY-ta-v2v" kind="show" identifier="showMainApp" id="gw7-3m-kWV"/>
+                        <segue destination="QfY-9W-pjx" kind="presentation" identifier="showSignUp" modalTransitionStyle="crossDissolve" id="EhS-dn-NY2"/>
+                        <segue destination="b8i-Sz-6fV" kind="presentation" identifier="showLogin" modalTransitionStyle="crossDissolve" id="4ba-cv-EZi"/>
+                        <segue destination="lrU-eN-3cX" kind="presentation" identifier="showApp" modalTransitionStyle="crossDissolve" id="wsb-Cg-hMH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V4T-ml-414" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -80,6 +80,9 @@
                                     <constraint firstAttribute="width" constant="183" id="MXH-0I-zfo"/>
                                 </constraints>
                                 <state key="normal" title="Existing Account"/>
+                                <connections>
+                                    <action selector="existingAccountPressed:" destination="QfY-9W-pjx" eventType="touchUpInside" id="85h-9n-fpN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.13725490196078433" green="0.81568627450980391" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -100,11 +103,13 @@
                         <outlet property="confirmPasswordField" destination="hq6-Ff-yWs" id="JM9-kE-iRM"/>
                         <outlet property="emailField" destination="x6b-xf-Mwm" id="oPl-yQ-KYY"/>
                         <outlet property="passwordField" destination="z7G-Qq-oJ6" id="Adf-hL-eOa"/>
+                        <segue destination="lrU-eN-3cX" kind="presentation" identifier="showApp" modalTransitionStyle="flipHorizontal" id="E06-LR-OeQ"/>
+                        <segue destination="b8i-Sz-6fV" kind="presentation" identifier="showLogin" modalTransitionStyle="flipHorizontal" id="KZX-PL-8Ir"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xfv-CY-DPy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1084" y="75"/>
+            <point key="canvasLocation" x="1084" y="3"/>
         </scene>
         <!--Login-->
         <scene sceneID="SGI-da-lC5">
@@ -158,6 +163,9 @@
                                     <constraint firstAttribute="width" constant="346" id="yer-qq-Vqr"/>
                                 </constraints>
                                 <state key="normal" title="Not Now"/>
+                                <connections>
+                                    <action selector="notNowPressed:" destination="b8i-Sz-6fV" eventType="touchUpInside" id="PYN-hW-NXA"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Email" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3Tc-yH-yPu">
                                 <rect key="frame" x="127" y="279" width="346" height="30"/>
@@ -186,29 +194,65 @@
                     <connections>
                         <outlet property="emailTextField" destination="3Tc-yH-yPu" id="EZ9-OV-RVH"/>
                         <outlet property="passwordTextField" destination="KDn-jC-FSy" id="ldY-p6-C9Q"/>
+                        <segue destination="lrU-eN-3cX" kind="presentation" identifier="showApp" modalTransitionStyle="flipHorizontal" id="vNb-KB-j7d"/>
+                        <segue destination="QfY-9W-pjx" kind="presentation" identifier="showSignUp" modalTransitionStyle="flipHorizontal" id="0n3-Aa-HpK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="egC-68-bQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1084" y="744"/>
+            <point key="canvasLocation" x="1084" y="978"/>
         </scene>
-        <!--Main App-->
-        <scene sceneID="StV-EB-jh0">
+        <!--Catagory Selection-->
+        <scene sceneID="0RO-hL-UM2">
             <objects>
-                <viewController title="Main App" id="NsY-ta-v2v" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="aPI-C9-NSW"/>
-                        <viewControllerLayoutGuide type="bottom" id="j8B-fD-pug"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="xGY-dT-0ss">
+                <tableViewController title="Catagory Selection" id="sEX-ZQ-adD" customClass="SelectCatagoryTableViewController" customModule="DomoEats" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="6lP-OD-SbX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vBV-LJ-YSx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="uu6-Rv-On5">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uu6-Rv-On5" id="ADR-0O-MgJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="sEX-ZQ-adD" id="a3d-WW-PlJ"/>
+                            <outlet property="delegate" destination="sEX-ZQ-adD" id="Nvt-0e-hbG"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="a4i-UX-t57">
+                        <barButtonItem key="rightBarButtonItem" title="Find Food" id="5Sw-Yt-BlN"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G4s-NY-738" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1084" y="1414"/>
+            <point key="canvasLocation" x="2640" y="490"/>
+        </scene>
+        <!--Main App Navigation Controller-->
+        <scene sceneID="MNB-eh-Id7">
+            <objects>
+                <navigationController storyboardIdentifier="mainAppView" id="lrU-eN-3cX" customClass="MainAppNavigationController" customModule="DomoEats" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kut-Kd-g9s">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="sEX-ZQ-adD" kind="relationship" relationship="rootViewController" id="Gn3-Sp-7UR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Fo-vR-JEs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1852" y="490"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="KZX-PL-8Ir"/>
+        <segue reference="0n3-Aa-HpK"/>
+        <segue reference="E06-LR-OeQ"/>
+    </inferredMetricsTieBreakers>
 </document>

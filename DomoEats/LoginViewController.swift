@@ -34,14 +34,20 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func notNowPressed(sender: AnyObject) {
+        if let presentMainApp:MainAppNavigationController = storyboard?.instantiateViewControllerWithIdentifier("mainAppView") as? MainAppNavigationController {
+            self.performSegueWithIdentifier("showApp", sender: nil)
+        }
+    }
 
     @IBAction func loginPressed(sender: AnyObject) {
         validateTextFields()
+
     }
     @IBAction func signupPressed(sender: AnyObject) {
         // user doesn't have an account present signup screen
-        if let signup:SignUpViewController = storyboard?.instantiateViewControllerWithIdentifier("signupView") as? SignUpViewController {
-            self.presentViewController(signup, animated: true, completion: nil)
+        if let _:SignUpViewController = storyboard?.instantiateViewControllerWithIdentifier("signupView") as? SignUpViewController {
+            self.performSegueWithIdentifier("showSignUp", sender: nil)
         }
     }
     

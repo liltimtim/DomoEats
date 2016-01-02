@@ -34,6 +34,9 @@ class SignUpViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func existingAccountPressed(sender: AnyObject) {
+        self.performSegueWithIdentifier("showLogin", sender: nil)
+    }
     @IBAction func signupPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
 //        if validate() {

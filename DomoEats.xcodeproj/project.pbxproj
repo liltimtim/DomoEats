@@ -23,6 +23,12 @@
 		67194A521C309E2F00DAE805 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67194A501C309E2F00DAE805 /* SignUpViewController.swift */; };
 		67194A551C30B9EC00DAE805 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67194A541C30B9EC00DAE805 /* Authentication.swift */; };
 		67194A561C30B9EC00DAE805 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67194A541C30B9EC00DAE805 /* Authentication.swift */; };
+		67194A591C30C07000DAE805 /* MainAppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67194A581C30C07000DAE805 /* MainAppNavigationController.swift */; };
+		67194A5A1C30C07000DAE805 /* MainAppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67194A581C30C07000DAE805 /* MainAppNavigationController.swift */; };
+		67194A5C1C30C08300DAE805 /* SelectCatagoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67194A5B1C30C08300DAE805 /* SelectCatagoryTableViewController.swift */; };
+		67194A5D1C30C08300DAE805 /* SelectCatagoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67194A5B1C30C08300DAE805 /* SelectCatagoryTableViewController.swift */; };
+		675464001C373731008E071A /* YelpAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675463FF1C373731008E071A /* YelpAPI.swift */; };
+		675464011C373731008E071A /* YelpAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675463FF1C373731008E071A /* YelpAPI.swift */; };
 		EE6935F01A20CAF5FB428CB1 /* Pods_DomoEats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D69970072AEAC70ED9739B /* Pods_DomoEats.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +71,10 @@
 		67194A4D1C309E2400DAE805 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		67194A501C309E2F00DAE805 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		67194A541C30B9EC00DAE805 /* Authentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		67194A581C30C07000DAE805 /* MainAppNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAppNavigationController.swift; sourceTree = "<group>"; };
+		67194A5B1C30C08300DAE805 /* SelectCatagoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCatagoryTableViewController.swift; sourceTree = "<group>"; };
+		675463FF1C373731008E071A /* YelpAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpAPI.swift; sourceTree = "<group>"; };
+		675464031C37390F008E071A /* DomoEats-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DomoEats-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		A92FBFBB2DA28DA24F89C753 /* Pods-DomoEatsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DomoEatsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DomoEatsUITests/Pods-DomoEatsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A9E6124DA1930863A7408B10 /* Pods_DomoEatsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DomoEatsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21CBC2B504C5A9DABC10CA0 /* Pods-DomoEatsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DomoEatsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DomoEatsTests/Pods-DomoEatsTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -137,13 +147,12 @@
 		67194A161C30943E00DAE805 /* DomoEats */ = {
 			isa = PBXGroup;
 			children = (
+				675464051C37638D008E071A /* Supporting Files */,
 				67194A531C30B9E000DAE805 /* API */,
 				67194A481C3098FD00DAE805 /* Views */,
 				67194A171C30943E00DAE805 /* AppDelegate.swift */,
 				67194A1B1C30943E00DAE805 /* Main.storyboard */,
-				67194A211C30943E00DAE805 /* Assets.xcassets */,
 				67194A231C30943E00DAE805 /* LaunchScreen.storyboard */,
-				67194A261C30943E00DAE805 /* Info.plist */,
 			);
 			path = DomoEats;
 			sourceTree = "<group>";
@@ -169,6 +178,7 @@
 		67194A481C3098FD00DAE805 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				67194A571C30BF6500DAE805 /* Main App Views */,
 				67194A4C1C309BB300DAE805 /* Login and Signup Views */,
 				67194A491C30991500DAE805 /* SplashViewController.swift */,
 			);
@@ -188,8 +198,28 @@
 			isa = PBXGroup;
 			children = (
 				67194A541C30B9EC00DAE805 /* Authentication.swift */,
+				675463FF1C373731008E071A /* YelpAPI.swift */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		67194A571C30BF6500DAE805 /* Main App Views */ = {
+			isa = PBXGroup;
+			children = (
+				67194A581C30C07000DAE805 /* MainAppNavigationController.swift */,
+				67194A5B1C30C08300DAE805 /* SelectCatagoryTableViewController.swift */,
+			);
+			name = "Main App Views";
+			sourceTree = "<group>";
+		};
+		675464051C37638D008E071A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				675464031C37390F008E071A /* DomoEats-Bridging-Header.h */,
+				67194A211C30943E00DAE805 /* Assets.xcassets */,
+				67194A261C30943E00DAE805 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		E9A19CD4BEC4E112C844DA73 /* Frameworks */ = {
@@ -464,10 +494,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67194A5C1C30C08300DAE805 /* SelectCatagoryTableViewController.swift in Sources */,
 				67194A4E1C309E2400DAE805 /* LoginViewController.swift in Sources */,
 				67194A181C30943E00DAE805 /* AppDelegate.swift in Sources */,
 				67194A511C309E2F00DAE805 /* SignUpViewController.swift in Sources */,
+				675464001C373731008E071A /* YelpAPI.swift in Sources */,
 				67194A551C30B9EC00DAE805 /* Authentication.swift in Sources */,
+				67194A591C30C07000DAE805 /* MainAppNavigationController.swift in Sources */,
 				67194A4A1C30991500DAE805 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,6 +509,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				675464011C373731008E071A /* YelpAPI.swift in Sources */,
 				67194A301C30943E00DAE805 /* DomoEatsTests.swift in Sources */,
 				67194A561C30B9EC00DAE805 /* Authentication.swift in Sources */,
 			);
@@ -485,8 +519,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67194A5A1C30C07000DAE805 /* MainAppNavigationController.swift in Sources */,
 				67194A4F1C309E2400DAE805 /* LoginViewController.swift in Sources */,
 				67194A3B1C30943E00DAE805 /* DomoEatsUITests.swift in Sources */,
+				67194A5D1C30C08300DAE805 /* SelectCatagoryTableViewController.swift in Sources */,
 				67194A521C309E2F00DAE805 /* SignUpViewController.swift in Sources */,
 				67194A4B1C30991500DAE805 /* SplashViewController.swift in Sources */,
 			);
@@ -619,6 +655,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.project.DomoEats;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DomoEats-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -631,6 +668,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.project.DomoEats;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DomoEats-Bridging-Header.h";
 			};
 			name = Release;
 		};
