@@ -38,8 +38,11 @@ class DomoEatsTests: XCTestCase {
 class YelpAPI_Tests: XCTestCase {
     func testSearchAPI() {
         let exp = expectationWithDescription("get results from search")
-        YelpAPI.shared.search { (success) -> Void in
-            XCTAssertTrue(success)
+        YelpAPI.shared.search(forLocation: "Augusta") { (places, error) -> Void in
+            for place in places {
+                XCTAssertNotNil(place.name)
+                XCTAssertNotNil(place.yelpID)
+            }
             exp.fulfill()
         }
         waitForExpectationsWithTimeout(10, handler: nil)

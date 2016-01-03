@@ -29,6 +29,8 @@
 		67194A5D1C30C08300DAE805 /* SelectCatagoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67194A5B1C30C08300DAE805 /* SelectCatagoryTableViewController.swift */; };
 		675464001C373731008E071A /* YelpAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675463FF1C373731008E071A /* YelpAPI.swift */; };
 		675464011C373731008E071A /* YelpAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675463FF1C373731008E071A /* YelpAPI.swift */; };
+		675464081C38148A008E071A /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675464071C38148A008E071A /* Places.swift */; };
+		675464091C38148A008E071A /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675464071C38148A008E071A /* Places.swift */; };
 		EE6935F01A20CAF5FB428CB1 /* Pods_DomoEats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D69970072AEAC70ED9739B /* Pods_DomoEats.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +77,7 @@
 		67194A5B1C30C08300DAE805 /* SelectCatagoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCatagoryTableViewController.swift; sourceTree = "<group>"; };
 		675463FF1C373731008E071A /* YelpAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpAPI.swift; sourceTree = "<group>"; };
 		675464031C37390F008E071A /* DomoEats-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DomoEats-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		675464071C38148A008E071A /* Places.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
 		A92FBFBB2DA28DA24F89C753 /* Pods-DomoEatsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DomoEatsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DomoEatsUITests/Pods-DomoEatsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A9E6124DA1930863A7408B10 /* Pods_DomoEatsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DomoEatsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21CBC2B504C5A9DABC10CA0 /* Pods-DomoEatsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DomoEatsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DomoEatsTests/Pods-DomoEatsTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -197,6 +200,7 @@
 		67194A531C30B9E000DAE805 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				675464061C38147B008E071A /* Models */,
 				67194A541C30B9EC00DAE805 /* Authentication.swift */,
 				675463FF1C373731008E071A /* YelpAPI.swift */,
 			);
@@ -220,6 +224,14 @@
 				67194A261C30943E00DAE805 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		675464061C38147B008E071A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				675464071C38148A008E071A /* Places.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		E9A19CD4BEC4E112C844DA73 /* Frameworks */ = {
@@ -502,6 +514,7 @@
 				67194A551C30B9EC00DAE805 /* Authentication.swift in Sources */,
 				67194A591C30C07000DAE805 /* MainAppNavigationController.swift in Sources */,
 				67194A4A1C30991500DAE805 /* SplashViewController.swift in Sources */,
+				675464081C38148A008E071A /* Places.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +525,7 @@
 				675464011C373731008E071A /* YelpAPI.swift in Sources */,
 				67194A301C30943E00DAE805 /* DomoEatsTests.swift in Sources */,
 				67194A561C30B9EC00DAE805 /* Authentication.swift in Sources */,
+				675464091C38148A008E071A /* Places.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

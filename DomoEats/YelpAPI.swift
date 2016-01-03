@@ -10,10 +10,10 @@ import Foundation
 import TDOAuth
 import SwiftyJSON
 class YelpAPI:NSObject {
-    static let kConsumerKey = "Bb0PTv3rNSHO3UsXOLVeLw"
-    static let kConsumerSecret = "K2qk374K34_7A2XYg-5-RqZLbEc"
-    static let kToken = "Fhbd3Iuj4MijQ7y34xgQEPGhQi6ukhpx"
-    static let kTokenSecret = "cG2bFeWYDLxX1Q-SQ_qp2kW7yz0"
+    private let kConsumerKey = "Bb0PTv3rNSHO3UsXOLVeLw"
+    private let kConsumerSecret = "K2qk374K34_7A2XYg-5-RqZLbEc"
+    private let kToken = "Fhbd3Iuj4MijQ7y34xgQEPGhQi6ukhpx"
+    private let kTokenSecret = "cG2bFeWYDLxX1Q-SQ_qp2kW7yz0"
     static let shared = YelpAPI()
     private var session:NSURLSession!
     private override init() {
@@ -22,24 +22,86 @@ class YelpAPI:NSObject {
         self.session.configuration.timeoutIntervalForRequest = 10.0
     }
     
-    func search(completion:(success:Bool) -> Void) {
-        let request = requestWithHost("", params: ["hello":"world"], host: "")
-        let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
-            print(response)
-            let json = JSON(data: data!)
-            print(json["businesses"].count)
-            print(json["businesses"][0])
-            completion(success: true)
+    
+    func getPlacesAroundUser(lat:Double, long:Double, completion:(places:[Places], error:NSError?) -> Void) {
+        let request = TDOAuth.URLRequestForPath("/v2/search", GETParameters: ["term":"food", "cll":"\(lat),\(long)"], scheme: "https", host: "api.yelp.com", consumerKey: kConsumerKey, consumerSecret: kConsumerSecret, accessToken: kToken, tokenSecret: kTokenSecret)
+        setupDataTask(wthRequest: request) { (data, response, error) -> Void in
+            if data != nil {
+                let json = JSON(data: data!)
+                var places = [Places]()
+                for business in json["businesses"] {
+                    places.append(Places(data: business.1))
+                }
+                completion(places: places, error: nil)
+            } else {
+                completion(places: [Places](), error: error)
+            }
         }
-        task.resume()
     }
     
-    func getPlacesAroundUser(completion:(success:Bool) -> Void) {
+    func search(forLocation location:String, withCategoryFilters filters:[String], completion:(places:[Places], error:NSError?)->Void) {
+        let joinedFiltersWithComma = filters.joinWithSeparator(",")
+        let request = TDOAuth.URLRequestForPath("/v2/search", GETParameters: ["term":"food", "location":location, "category_filter":joinedFiltersWithComma], scheme: "https", host: "api.yelp.com", consumerKey: kConsumerKey, consumerSecret: kConsumerSecret, accessToken: kToken, tokenSecret: kTokenSecret)
+        setupDataTask(wthRequest: request) { (data, response, error) -> Void in
+            if data != nil {
+                let json = JSON(data: data!)
+                var places = [Places]()
+                for business in json["businesses"] {
+                    places.append(Places(data: business.1))
+                }
+                completion(places: places, error: nil)
+            } else {
+                completion(places: [Places](), error: error)
+            }
+        }
+    }
+    
+    func search(withLat lat:String, withLong long:String, filters:[String], completion:(places:[Places], error:NSError?)->Void) {
+        let request = TDOAuth.URLRequestForPath("/v2/search", GETParameters: ["term":"food", "cll":"\(lat),\(long)", "category_filter":filters.joinWithSeparator(",")], scheme: "https", host: "api.yelp.com", consumerKey: kConsumerKey, consumerSecret: kConsumerSecret, accessToken: kToken, tokenSecret: kTokenSecret)
+        setupDataTask(wthRequest: request) { (data, response, error) -> Void in
+            if data != nil {
+                let json = JSON(data: data!)
+                var places = [Places]()
+                for business in json["businesses"] {
+                    places.append(Places(data: business.1))
+                }
+                completion(places: places, error: nil)
+            } else {
+                completion(places: [Places](), error: error)
+            }
+        }
+    }
+    
+    func search(forLocation location:String, completion:(places:[Places], error:NSError?) -> Void) {
+        let request = TDOAuth.URLRequestForPath("/v2/search", GETParameters: ["term":"food", "location":location], scheme: "https", host: "api.yelp.com", consumerKey: kConsumerKey, consumerSecret: kConsumerSecret, accessToken: kToken, tokenSecret: kTokenSecret)
+        setupDataTask(wthRequest: request) { (data, response, error) -> Void in
+            if data != nil {
+                let json = JSON(data: data!)
+                var places = [Places]()
+                for business in json["businesses"] {
+                    places.append(Places(data: business.1))
+                }
+                completion(places: places, error: nil)
+            } else {
+                completion(places: [Places](), error: error)
+            }
+        }
         
     }
     
-    private func requestWithHost(path:String, params:[NSObject : AnyObject], host:String) -> NSURLRequest {
-        return TDOAuth.URLRequestForPath("/v2/search", GETParameters: ["term":"food", "location":"North Augusta"], scheme: "https", host: "api.yelp.com", consumerKey: YelpAPI.kConsumerKey, consumerSecret: YelpAPI.kConsumerSecret, accessToken: YelpAPI.kToken, tokenSecret: YelpAPI.kTokenSecret)
+    private func setupDataTask(wthRequest request:NSURLRequest, completion:(data:NSData?, response:NSURLResponse?, error:NSError?)->Void) {
+        let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
+            if error == nil {
+                if data != nil {
+                    completion(data: data, response: response, error: nil)
+                } else {
+                    completion(data: nil, response: response, error: error)
+                }
+            } else {
+                completion(data: nil, response: response, error: error)
+            }
+        }
+        task.resume()
     }
     
 }
