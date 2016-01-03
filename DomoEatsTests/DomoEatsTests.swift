@@ -34,6 +34,12 @@ class DomoEatsTests: XCTestCase {
     }
     
 }
+class DEYelpImageCache_Tests: XCTestCase {
+    func testLoadAndRetrieveImageFromCache() {
+        DEYelpImageCache.shared.addImage(UIImage(), key: "test_image")
+        XCTAssertNotNil(DEYelpImageCache.shared.getImage("test_image"))
+    }
+}
 
 class YelpAPI_Tests: XCTestCase {
     func testSearchAPI() {
@@ -42,7 +48,57 @@ class YelpAPI_Tests: XCTestCase {
             for place in places {
                 XCTAssertNotNil(place.name)
                 XCTAssertNotNil(place.yelpID)
+                XCTAssertNotNil(place.latitude)
+                XCTAssertNotNil(place.long)
+                XCTAssertNotNil(place.starRatingURL)
+                print(place.imageURL)
+                print(place.name)
+                print(place.latitude)
+                print(place.long)
+                print(place.getFriendlyCategories())
             }
+            exp.fulfill()
+        }
+        waitForExpectationsWithTimeout(10, handler: nil)
+    }
+    
+    func testSearchWithFiltersNoFilters() {
+        let exp = expectationWithDescription("Search without filters")
+        YelpAPI.shared.search(forLocation: "Augusta", withCategoryFilters: []) { (places, error) -> Void in
+            for place in places {
+                XCTAssertNotNil(place.name)
+                XCTAssertNotNil(place.yelpID)
+                XCTAssertNotNil(place.latitude)
+                XCTAssertNotNil(place.long)
+                XCTAssertNotNil(place.starRatingURL)
+                print(place.imageURL)
+                print(place.name)
+                print(place.latitude)
+                print(place.long)
+                print(place.getFriendlyCategories())
+            }
+            XCTAssertGreaterThan(places.count, 0)
+            exp.fulfill()
+        }
+        waitForExpectationsWithTimeout(10, handler: nil)
+    }
+    
+    func testSearchWithFiltersSingleFilter() {
+        let exp = expectationWithDescription("Search without filters")
+        YelpAPI.shared.search(forLocation: "Augusta", withCategoryFilters: ["bbq"]) { (places, error) -> Void in
+            for place in places {
+                XCTAssertNotNil(place.name)
+                XCTAssertNotNil(place.yelpID)
+                XCTAssertNotNil(place.latitude)
+                XCTAssertNotNil(place.long)
+                XCTAssertNotNil(place.starRatingURL)
+                print(place.imageURL)
+                print(place.name)
+                print(place.latitude)
+                print(place.long)
+                print(place.getFriendlyCategories())
+            }
+            XCTAssertGreaterThan(places.count, 0)
             exp.fulfill()
         }
         waitForExpectationsWithTimeout(10, handler: nil)

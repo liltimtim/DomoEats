@@ -34,11 +34,7 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    @IBAction func notNowPressed(sender: AnyObject) {
-        if let presentMainApp:MainAppNavigationController = storyboard?.instantiateViewControllerWithIdentifier("mainAppView") as? MainAppNavigationController {
-            self.performSegueWithIdentifier("showApp", sender: nil)
-        }
-    }
+
 
     @IBAction func loginPressed(sender: AnyObject) {
         validateTextFields()
