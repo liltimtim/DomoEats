@@ -37,6 +37,8 @@
 		67FF300D1C39A5B900212350 /* DEYelpImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FF300B1C39A5B900212350 /* DEYelpImageCache.swift */; };
 		67FF300F1C39B28C00212350 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 67FF300E1C39B28C00212350 /* splash.png */; };
 		67FF30101C39B28C00212350 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 67FF300E1C39B28C00212350 /* splash.png */; };
+		67FF301A1C39D2B100212350 /* CatagorySelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FF30191C39D2B100212350 /* CatagorySelectionCell.swift */; };
+		67FF301C1C39D2C200212350 /* CatagorySelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67FF301B1C39D2C200212350 /* CatagorySelectionCell.xib */; };
 		EE6935F01A20CAF5FB428CB1 /* Pods_DomoEats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D69970072AEAC70ED9739B /* Pods_DomoEats.framework */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +91,8 @@
 		67FF30091C398FC500212350 /* MapPlaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPlaces.swift; sourceTree = "<group>"; };
 		67FF300B1C39A5B900212350 /* DEYelpImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DEYelpImageCache.swift; sourceTree = "<group>"; };
 		67FF300E1C39B28C00212350 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
+		67FF30191C39D2B100212350 /* CatagorySelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatagorySelectionCell.swift; sourceTree = "<group>"; };
+		67FF301B1C39D2C200212350 /* CatagorySelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CatagorySelectionCell.xib; sourceTree = "<group>"; };
 		A92FBFBB2DA28DA24F89C753 /* Pods-DomoEatsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DomoEatsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DomoEatsUITests/Pods-DomoEatsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A9E6124DA1930863A7408B10 /* Pods_DomoEatsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DomoEatsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21CBC2B504C5A9DABC10CA0 /* Pods-DomoEatsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DomoEatsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DomoEatsTests/Pods-DomoEatsTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -193,11 +197,12 @@
 		67194A481C3098FD00DAE805 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				67FF30171C39D28C00212350 /* Cells */,
 				67FF30141C39D1C600212350 /* Find View */,
-				67194A571C30BF6500DAE805 /* Main App Views */,
-				67194A4C1C309BB300DAE805 /* Login and Signup Views */,
-				67194A491C30991500DAE805 /* SplashViewController.swift */,
 				67FF30021C38AF3700212350 /* InitialViewController.swift */,
+				67194A4C1C309BB300DAE805 /* Login and Signup Views */,
+				67194A571C30BF6500DAE805 /* Main App Views */,
+				67194A491C30991500DAE805 /* SplashViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -214,8 +219,8 @@
 		67194A531C30B9E000DAE805 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				675464061C38147B008E071A /* Models */,
 				67194A541C30B9EC00DAE805 /* Authentication.swift */,
+				675464061C38147B008E071A /* Models */,
 				675463FF1C373731008E071A /* YelpAPI.swift */,
 			);
 			name = API;
@@ -243,9 +248,9 @@
 		675464061C38147B008E071A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				675464071C38148A008E071A /* Places.swift */,
-				67FF30091C398FC500212350 /* MapPlaces.swift */,
 				67FF300B1C39A5B900212350 /* DEYelpImageCache.swift */,
+				67FF30091C398FC500212350 /* MapPlaces.swift */,
+				675464071C38148A008E071A /* Places.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -256,6 +261,31 @@
 				67FF30071C396AC300212350 /* FindViewController.swift */,
 			);
 			name = "Find View";
+			sourceTree = "<group>";
+		};
+		67FF30151C39D27E00212350 /* Cell Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				67FF301B1C39D2C200212350 /* CatagorySelectionCell.xib */,
+			);
+			name = "Cell Xibs";
+			sourceTree = "<group>";
+		};
+		67FF30161C39D28500212350 /* Cell Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				67FF30191C39D2B100212350 /* CatagorySelectionCell.swift */,
+			);
+			name = "Cell Implementation";
+			sourceTree = "<group>";
+		};
+		67FF30171C39D28C00212350 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				67FF30161C39D28500212350 /* Cell Implementation */,
+				67FF30151C39D27E00212350 /* Cell Xibs */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		E9A19CD4BEC4E112C844DA73 /* Frameworks */ = {
@@ -388,6 +418,7 @@
 			files = (
 				67FF300F1C39B28C00212350 /* splash.png in Resources */,
 				67194A251C30943E00DAE805 /* LaunchScreen.storyboard in Resources */,
+				67FF301C1C39D2C200212350 /* CatagorySelectionCell.xib in Resources */,
 				67194A221C30943E00DAE805 /* Assets.xcassets in Resources */,
 				67194A1D1C30943E00DAE805 /* Main.storyboard in Resources */,
 			);
@@ -538,6 +569,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67FF301A1C39D2B100212350 /* CatagorySelectionCell.swift in Sources */,
 				67FF300A1C398FC500212350 /* MapPlaces.swift in Sources */,
 				67194A5C1C30C08300DAE805 /* SelectCatagoryTableViewController.swift in Sources */,
 				67194A4E1C309E2400DAE805 /* LoginViewController.swift in Sources */,
