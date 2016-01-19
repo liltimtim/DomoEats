@@ -9,6 +9,7 @@
 import Foundation
 import SwiftyJSON
 import MapKit
+import SDWebImage
 class Places:NSObject {
     private(set) var yelpID:String?
     private(set) var name:String?
@@ -44,20 +45,31 @@ class Places:NSObject {
     }
     
     func getStarRatingImage(completion:(image:UIImage?)->Void) {
-        
+        if starRatingURL != nil {
+            SDWebImageManager.sharedManager().downloadImageWithURL(NSURL(string: starRatingURL!)!, options: SDWebImageOptions.ContinueInBackground, progress: nil, completed: { (image, error, cacheType, success, url) -> Void in
+                if error == nil {
+                    completion(image: image)
+                } else {
+                    completion(image: nil)
+                }
+            })
+        } else {
+            completion(image: nil)
+        }
     }
     
     func getBusinessImage(completion:(image:UIImage?)->Void) {
-        // first check the cache to see if an image exists or not
         if imageURL != nil {
-            if let returnedImage = DEYelpImageCache.shared.getImage(imageURL!) {
-                completion(image: returnedImage)
-            } else {
-                // no image in cache grab from network add it to cache
-                
+            SDWebImageManager.sharedManager().downloadImageWithURL(NSURL(string: imageURL!)!, options: SDWebImageOptions.ContinueInBackground, progress: nil) { (image, error, cacheType, success, url) -> Void in
+                if error == nil {
+                    completion(image: image)
+                } else {
+                    completion(image: nil)
+                }
             }
+        } else {
+            completion(image: nil)
         }
-        
     }
     
     func getFriendlyCategories() -> [String] {

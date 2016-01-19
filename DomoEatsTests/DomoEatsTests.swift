@@ -103,4 +103,19 @@ class YelpAPI_Tests: XCTestCase {
         }
         waitForExpectationsWithTimeout(10, handler: nil)
     }
+    
+    func testSearchWithLocationVerifyRatingImagesExist() {
+        let exp = expectationWithDescription("Get Star Rating Images")
+        YelpAPI.shared.search(forLocation: "Augusta") { (places, error) -> Void in
+            XCTAssertGreaterThan(places.count, 0)
+            for place in places {
+                XCTAssertNotNil(place.starRatingURL)
+            }
+            places[0].getStarRatingImage({ (image) -> Void in
+                XCTAssertNotNil(image)
+                exp.fulfill()
+            })
+        }
+        waitForExpectationsWithTimeout(10, handler: nil)
+    }
 }

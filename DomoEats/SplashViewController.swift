@@ -31,7 +31,6 @@ class SplashViewController: UIViewController {
         } else {
             // show login screen
             print("user not logged in show login screen")
-            weak var loginScreen = storyboard?.instantiateViewControllerWithIdentifier("loginView") as! LoginViewController
             self.performSegueWithIdentifier("showLogin", sender: nil)
         }
     }

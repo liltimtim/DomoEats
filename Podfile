@@ -7,6 +7,7 @@ def install
     pod 'Parse'
     pod 'TDOAuth'
     pod 'SwiftyJSON'
+    pod 'SDWebImage'
 end
 
 target 'DomoEats' do

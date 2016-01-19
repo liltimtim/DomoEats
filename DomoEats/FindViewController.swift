@@ -47,15 +47,22 @@ class FindViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        print(sender)
+        print(segue.destinationViewController)
+        if let destinationView:PlaceDetailViewController = segue.destinationViewController as? PlaceDetailViewController {
+            if let mapViewPlace:MapPlaces = sender as? MapPlaces {
+                destinationView.place = mapViewPlace
+            }
+        }
     }
-    */
+
     
     @IBAction func findMePressed(sender: AnyObject) {
         // prime the user to allow location
@@ -119,6 +126,24 @@ class FindViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print(error.localizedDescription)
+        // TODO: Display Error to user that we can't find their location!
+        print(manager)
+        print(error)
+        if error.domain == kCLErrorDomain {
+            switch (error.code) {
+            case CLError.Denied.rawValue:
+                manager.stopUpdatingLocation() // user denied us, stop waisting battery power
+                // TODO: Alert the user that they need to share their location if the app is to work properly.
+                break
+                
+            case CLError.LocationUnknown.rawValue:
+                // TODO: Alert the user that we are having trouble determining location
+                break
+                
+            default:
+                break
+            }
+        }
     }
     
     // MARK: - Map View Delegate
@@ -137,6 +162,8 @@ class FindViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         print(view)
+        print(view.annotation?.title)
+        self.performSegueWithIdentifier("showPlaceDetail", sender: view.annotation)
     }
     
     func mapView(mapView: MKMapView, didAddAnnotationViews views: [MKAnnotationView]) {
@@ -147,9 +174,12 @@ class FindViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         if annotation is MKUserLocation {
             //return nil so map view draws "blue dot" for standard user location
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                // I don't need the user's location anymore since I have it
                 let region = MKCoordinateRegionMakeWithDistance(mapView.userLocation.coordinate, 2000, 2000)
                 self.mapView.setRegion(region, animated: true)
                 self.locationManager.stopUpdatingLocation()
+                // TODO: Option, I could begin searching the yelp api GeoCoord now since I have the users location?
+                // this would allow me to autoload suggested places without the user having to touch anything.
             })
             return nil
         }

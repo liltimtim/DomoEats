@@ -86,7 +86,19 @@ class YelpAPI:NSObject {
                 completion(places: [Places](), error: error)
             }
         }
-        
+    }
+    
+    func getPlace(withYelpID id:String, completion:(place:Places?, error:NSError?) -> Void) {
+        let request = TDOAuth.URLRequestForPath("/v2/business/\(id)", GETParameters: nil, host: "api.yelp.com", consumerKey: kConsumerKey, consumerSecret: kConsumerSecret, accessToken: kToken, tokenSecret: kTokenSecret)
+        setupDataTask(wthRequest: request) { (data, response, error) -> Void in
+            print(response)
+            print(error)
+            if data != nil {
+                completion(place: Places(data: JSON(data: data!)), error: nil)
+            } else {
+                completion(place: nil, error: error)
+            }
+        }
     }
     
     private func setupDataTask(wthRequest request:NSURLRequest, completion:(data:NSData?, response:NSURLResponse?, error:NSError?)->Void) {
