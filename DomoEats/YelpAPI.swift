@@ -24,7 +24,7 @@ class YelpAPI:NSObject {
     
     
     func getPlacesAroundUser(lat:Double, long:Double, location:String, completion:(places:[Places], error:NSError?) -> Void) {
-        let request = TDOAuth.URLRequestForPath("/v2/search", GETParameters: ["term":"food", "cll":"\(lat),\(long)", "location":location], scheme: "https", host: "api.yelp.com", consumerKey: kConsumerKey, consumerSecret: kConsumerSecret, accessToken: kToken, tokenSecret: kTokenSecret)
+        let request = TDOAuth.URLRequestForPath("/v2/search", GETParameters: ["term":"restaurants", "cll":"\(lat),\(long)", "location":location], scheme: "https", host: "api.yelp.com", consumerKey: kConsumerKey, consumerSecret: kConsumerSecret, accessToken: kToken, tokenSecret: kTokenSecret)
         setupDataTask(wthRequest: request) { (data, response, error) -> Void in
             if data != nil {
                 let json = JSON(data: data!)
@@ -41,7 +41,7 @@ class YelpAPI:NSObject {
     
     func search(forLocation location:String, withCategoryFilters filters:[String], completion:(places:[Places], error:NSError?)->Void) {
         let joinedFiltersWithComma = filters.joinWithSeparator(",")
-        let request = TDOAuth.URLRequestForPath("/v2/search", GETParameters: ["term":"food", "location":location, "category_filter":joinedFiltersWithComma], scheme: "https", host: "api.yelp.com", consumerKey: kConsumerKey, consumerSecret: kConsumerSecret, accessToken: kToken, tokenSecret: kTokenSecret)
+        let request = TDOAuth.URLRequestForPath("/v2/search", GETParameters: ["term":"restaurants", "location":location, "category_filter":joinedFiltersWithComma], scheme: "https", host: "api.yelp.com", consumerKey: kConsumerKey, consumerSecret: kConsumerSecret, accessToken: kToken, tokenSecret: kTokenSecret)
         setupDataTask(wthRequest: request) { (data, response, error) -> Void in
             if data != nil {
                 let json = JSON(data: data!)
@@ -57,7 +57,7 @@ class YelpAPI:NSObject {
     }
     
     func search(withLat lat:String, withLong long:String, filters:[String], completion:(places:[Places], error:NSError?)->Void) {
-        let request = TDOAuth.URLRequestForPath("/v2/search", GETParameters: ["term":"food", "cll":"\(lat),\(long)", "category_filter":filters.joinWithSeparator(",")], scheme: "https", host: "api.yelp.com", consumerKey: kConsumerKey, consumerSecret: kConsumerSecret, accessToken: kToken, tokenSecret: kTokenSecret)
+        let request = TDOAuth.URLRequestForPath("/v2/search", GETParameters: ["term":"restaurants", "cll":"\(lat),\(long)", "category_filter":filters.joinWithSeparator(",")], scheme: "https", host: "api.yelp.com", consumerKey: kConsumerKey, consumerSecret: kConsumerSecret, accessToken: kToken, tokenSecret: kTokenSecret)
         setupDataTask(wthRequest: request) { (data, response, error) -> Void in
             if data != nil {
                 let json = JSON(data: data!)
@@ -73,7 +73,7 @@ class YelpAPI:NSObject {
     }
     
     func search(forLocation location:String, completion:(places:[Places], error:NSError?) -> Void) {
-        let request = TDOAuth.URLRequestForPath("/v2/search", GETParameters: ["term":"food", "location":location], scheme: "https", host: "api.yelp.com", consumerKey: kConsumerKey, consumerSecret: kConsumerSecret, accessToken: kToken, tokenSecret: kTokenSecret)
+        let request = TDOAuth.URLRequestForPath("/v2/search", GETParameters: ["term":"restaurants", "location":location], scheme: "https", host: "api.yelp.com", consumerKey: kConsumerKey, consumerSecret: kConsumerSecret, accessToken: kToken, tokenSecret: kTokenSecret)
         setupDataTask(wthRequest: request) { (data, response, error) -> Void in
             if data != nil {
                 let json = JSON(data: data!)

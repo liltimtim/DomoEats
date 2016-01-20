@@ -14,6 +14,7 @@ class FindViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     var locationManager:CLLocationManager!
     var searchActivityIndicator:UIActivityIndicatorView?
     private var annotations:[MKAnnotation] = [MKAnnotation]()
+    private var places:[Places] = [Places]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -200,17 +201,22 @@ class FindViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     }
     
     func showUserPlaces() {
-        if mapView.userLocation.location != nil {
-            CLGeocoder().reverseGeocodeLocation(mapView.userLocation.location!) { (placeMarks, error) -> Void in
-                if error == nil {
-                    if placeMarks?.count > 0 {
-                        if let pm:CLPlacemark = placeMarks?[0] {
-                            if let locality:String = pm.locality {
-                                YelpAPI.shared.getPlacesAroundUser(self.mapView.userLocation.location!.coordinate.latitude, long: self.mapView.userLocation.location!.coordinate.longitude, location: locality, completion: { (places, error) -> Void in
-                                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                        self.refreshDataPoints(places)
+        if places.count != 0 {
+            refreshDataPoints(places)
+        } else {
+            if mapView.userLocation.location != nil {
+                CLGeocoder().reverseGeocodeLocation(mapView.userLocation.location!) { (placeMarks, error) -> Void in
+                    if error == nil {
+                        if placeMarks?.count > 0 {
+                            if let pm:CLPlacemark = placeMarks?[0] {
+                                if let locality:String = pm.locality {
+                                    YelpAPI.shared.getPlacesAroundUser(self.mapView.userLocation.location!.coordinate.latitude, long: self.mapView.userLocation.location!.coordinate.longitude, location: locality, completion: { (places, error) -> Void in
+                                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                            self.places = places
+                                            self.refreshDataPoints(places)
+                                        })
                                     })
-                                })
+                                }
                             }
                         }
                     }
