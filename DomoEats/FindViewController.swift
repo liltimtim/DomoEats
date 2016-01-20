@@ -12,6 +12,7 @@ class FindViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var searchBar: UISearchBar!
     var locationManager:CLLocationManager!
+    var searchActivityIndicator:UIActivityIndicatorView?
     private var annotations:[MKAnnotation] = [MKAnnotation]()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,7 @@ class FindViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
-
+        showUserPlaces()
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,24 +74,7 @@ class FindViewController: UIViewController, CLLocationManagerDelegate, MKMapView
 
     @IBAction func searchPressed(sender: AnyObject) {
         // perform search of businesses around the user
-        if mapView.userLocation.location != nil {
-            CLGeocoder().reverseGeocodeLocation(mapView.userLocation.location!) { (placeMarks, error) -> Void in
-                if error == nil {
-                    if placeMarks?.count > 0 {
-                        if let pm:CLPlacemark = placeMarks?[0] {
-                            if let locality:String = pm.locality {
-                                YelpAPI.shared.getPlacesAroundUser(self.mapView.userLocation.location!.coordinate.latitude, long: self.mapView.userLocation.location!.coordinate.longitude, location: locality, completion: { (places, error) -> Void in
-                                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                        self.refreshDataPoints(places)
-                                    })
-                                })
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
+        showUserPlaces()
     }
     
     // MARK: - Location Manager
@@ -121,7 +105,7 @@ class FindViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-
+        print(locations)
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
@@ -154,9 +138,6 @@ class FindViewController: UIViewController, CLLocationManagerDelegate, MKMapView
             print(note.title)
             view.canShowCallout = true
             view.rightCalloutAccessoryView = UIButton(type: UIButtonType.DetailDisclosure)
-//            let detailView:UIView = UIView(frame: view.rightCalloutAccessoryView!.frame)
-//            detailView.addSubview(UIButton(type: UIButtonType.DetailDisclosure))
-//            view.rightCalloutAccessoryView = detailView
         }
     }
     
@@ -218,10 +199,41 @@ class FindViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         mapView.addAnnotations(annotations)
     }
     
+    func showUserPlaces() {
+        if mapView.userLocation.location != nil {
+            CLGeocoder().reverseGeocodeLocation(mapView.userLocation.location!) { (placeMarks, error) -> Void in
+                if error == nil {
+                    if placeMarks?.count > 0 {
+                        if let pm:CLPlacemark = placeMarks?[0] {
+                            if let locality:String = pm.locality {
+                                YelpAPI.shared.getPlacesAroundUser(self.mapView.userLocation.location!.coordinate.latitude, long: self.mapView.userLocation.location!.coordinate.longitude, location: locality, completion: { (places, error) -> Void in
+                                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                        self.refreshDataPoints(places)
+                                    })
+                                })
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
     // MARK: - Search Bar Delegates
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         print("search clicked")
         searchBar.resignFirstResponder()
+    }
+    
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        searchActivityIndicator = UIActivityIndicatorView()
+        searchBar.addSubview(searchActivityIndicator!)
+        searchActivityIndicator?.startAnimating()
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        // start searching for places
+        print(searchText)
     }
     
     func dismissKeyboard() {
