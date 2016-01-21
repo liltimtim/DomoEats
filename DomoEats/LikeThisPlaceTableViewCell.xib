@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="LikeThisPlaceTableViewCell" customModule="DomoEats" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+            </tableViewCellContentView>
+        </tableViewCell>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="placeLikeCell" rowHeight="63" id="zEZ-Tv-KrR">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zEZ-Tv-KrR" id="GhO-3T-KzV">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="62.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" text="Do you like this place?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brd-Wr-eVE">
+                        <rect key="frame" x="8" y="21.5" width="170" height="20.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="170" id="g01-xJ-FEM"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="g01-xJ-FEM"/>
+                            </mask>
+                        </variation>
+                    </label>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hr4-Bi-caW">
+                        <rect key="frame" x="263" y="16" width="51" height="31"/>
+                    </switch>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Hr4-Bi-caW" firstAttribute="top" secondItem="GhO-3T-KzV" secondAttribute="topMargin" constant="8" id="8HH-vV-Ghj"/>
+                    <constraint firstItem="brd-Wr-eVE" firstAttribute="centerY" secondItem="GhO-3T-KzV" secondAttribute="centerY" id="Tf2-wf-MQd"/>
+                    <constraint firstItem="Hr4-Bi-caW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="brd-Wr-eVE" secondAttribute="trailing" constant="12" id="ZT4-cm-tZP"/>
+                    <constraint firstItem="brd-Wr-eVE" firstAttribute="top" secondItem="GhO-3T-KzV" secondAttribute="topMargin" constant="13" id="a2K-tE-tbJ"/>
+                    <constraint firstItem="Hr4-Bi-caW" firstAttribute="trailing" secondItem="GhO-3T-KzV" secondAttribute="trailingMargin" id="hIe-V2-uaF"/>
+                    <constraint firstItem="Hr4-Bi-caW" firstAttribute="centerY" secondItem="GhO-3T-KzV" secondAttribute="centerY" id="nzs-wj-BiQ"/>
+                    <constraint firstItem="brd-Wr-eVE" firstAttribute="leading" secondItem="GhO-3T-KzV" secondAttribute="leadingMargin" id="uZW-qW-qtA"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="a2K-tE-tbJ"/>
+                        <exclude reference="8HH-vV-Ghj"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="306" y="314.5"/>
+        </tableViewCell>
+    </objects>
+</document>

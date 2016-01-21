@@ -23,19 +23,19 @@
 		67194A521C309E2F00DAE805 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67194A501C309E2F00DAE805 /* SignUpViewController.swift */; };
 		67194A551C30B9EC00DAE805 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67194A541C30B9EC00DAE805 /* Authentication.swift */; };
 		67194A561C30B9EC00DAE805 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67194A541C30B9EC00DAE805 /* Authentication.swift */; };
-		67194A5C1C30C08300DAE805 /* SelectCatagoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67194A5B1C30C08300DAE805 /* SelectCatagoryTableViewController.swift */; };
-		67194A5D1C30C08300DAE805 /* SelectCatagoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67194A5B1C30C08300DAE805 /* SelectCatagoryTableViewController.swift */; };
+		6752AA261C5018AE00A5E387 /* PlaceDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6752AA251C5018AE00A5E387 /* PlaceDetailTableViewController.swift */; };
+		6752AA281C5021C700A5E387 /* PlaceDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6752AA271C5021C700A5E387 /* PlaceDetailCell.xib */; };
+		6752AA2A1C5024E900A5E387 /* PlaceDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6752AA291C5024E900A5E387 /* PlaceDetailTableViewCell.swift */; };
+		6752AA2E1C50350600A5E387 /* LikeThisPlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6752AA2C1C50350600A5E387 /* LikeThisPlaceTableViewCell.swift */; };
+		6752AA2F1C50350600A5E387 /* LikeThisPlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6752AA2D1C50350600A5E387 /* LikeThisPlaceTableViewCell.xib */; };
+		6752AA311C50352F00A5E387 /* CellWithAccessoryButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6752AA301C50352F00A5E387 /* CellWithAccessoryButtonTableViewCell.swift */; };
 		675464001C373731008E071A /* YelpAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675463FF1C373731008E071A /* YelpAPI.swift */; };
 		675464011C373731008E071A /* YelpAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675463FF1C373731008E071A /* YelpAPI.swift */; };
 		675464081C38148A008E071A /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675464071C38148A008E071A /* Places.swift */; };
 		675464091C38148A008E071A /* Places.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675464071C38148A008E071A /* Places.swift */; };
-		67F25E991C4EEC0E009CDB80 /* PlaceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F25E981C4EEC0E009CDB80 /* PlaceDetailViewController.swift */; };
-		67FF30031C38AF3700212350 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FF30021C38AF3700212350 /* InitialViewController.swift */; };
 		67FF30061C38CFB300212350 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67FF30051C38CFB300212350 /* MapKit.framework */; };
 		67FF30081C396AC300212350 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FF30071C396AC300212350 /* FindViewController.swift */; };
 		67FF300A1C398FC500212350 /* MapPlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FF30091C398FC500212350 /* MapPlaces.swift */; };
-		67FF300C1C39A5B900212350 /* DEYelpImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FF300B1C39A5B900212350 /* DEYelpImageCache.swift */; };
-		67FF300D1C39A5B900212350 /* DEYelpImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FF300B1C39A5B900212350 /* DEYelpImageCache.swift */; };
 		67FF300F1C39B28C00212350 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 67FF300E1C39B28C00212350 /* splash.png */; };
 		67FF30101C39B28C00212350 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 67FF300E1C39B28C00212350 /* splash.png */; };
 		67FF301A1C39D2B100212350 /* CatagorySelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FF30191C39D2B100212350 /* CatagorySelectionCell.swift */; };
@@ -82,16 +82,18 @@
 		67194A4D1C309E2400DAE805 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		67194A501C309E2F00DAE805 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		67194A541C30B9EC00DAE805 /* Authentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
-		67194A5B1C30C08300DAE805 /* SelectCatagoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCatagoryTableViewController.swift; sourceTree = "<group>"; };
+		6752AA251C5018AE00A5E387 /* PlaceDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetailTableViewController.swift; sourceTree = "<group>"; };
+		6752AA271C5021C700A5E387 /* PlaceDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceDetailCell.xib; sourceTree = "<group>"; };
+		6752AA291C5024E900A5E387 /* PlaceDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetailTableViewCell.swift; sourceTree = "<group>"; };
+		6752AA2C1C50350600A5E387 /* LikeThisPlaceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeThisPlaceTableViewCell.swift; sourceTree = "<group>"; };
+		6752AA2D1C50350600A5E387 /* LikeThisPlaceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LikeThisPlaceTableViewCell.xib; sourceTree = "<group>"; };
+		6752AA301C50352F00A5E387 /* CellWithAccessoryButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellWithAccessoryButtonTableViewCell.swift; sourceTree = "<group>"; };
 		675463FF1C373731008E071A /* YelpAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpAPI.swift; sourceTree = "<group>"; };
 		675464031C37390F008E071A /* DomoEats-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DomoEats-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		675464071C38148A008E071A /* Places.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Places.swift; sourceTree = "<group>"; };
-		67F25E981C4EEC0E009CDB80 /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
-		67FF30021C38AF3700212350 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		67FF30051C38CFB300212350 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		67FF30071C396AC300212350 /* FindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
 		67FF30091C398FC500212350 /* MapPlaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPlaces.swift; sourceTree = "<group>"; };
-		67FF300B1C39A5B900212350 /* DEYelpImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DEYelpImageCache.swift; sourceTree = "<group>"; };
 		67FF300E1C39B28C00212350 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
 		67FF30191C39D2B100212350 /* CatagorySelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatagorySelectionCell.swift; sourceTree = "<group>"; };
 		67FF301B1C39D2C200212350 /* CatagorySelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CatagorySelectionCell.xib; sourceTree = "<group>"; };
@@ -201,9 +203,7 @@
 			children = (
 				67FF30171C39D28C00212350 /* Cells */,
 				67FF30141C39D1C600212350 /* Find View */,
-				67FF30021C38AF3700212350 /* InitialViewController.swift */,
 				67194A4C1C309BB300DAE805 /* Login and Signup Views */,
-				67194A571C30BF6500DAE805 /* Main App Views */,
 				67194A491C30991500DAE805 /* SplashViewController.swift */,
 			);
 			name = Views;
@@ -221,19 +221,45 @@
 		67194A531C30B9E000DAE805 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				67194A541C30B9EC00DAE805 /* Authentication.swift */,
+				6752AA341C50580200A5E387 /* Parse Helpers */,
 				675464061C38147B008E071A /* Models */,
-				675463FF1C373731008E071A /* YelpAPI.swift */,
+				6752AA351C50580D00A5E387 /* Yelp API */,
 			);
 			name = API;
 			sourceTree = "<group>";
 		};
-		67194A571C30BF6500DAE805 /* Main App Views */ = {
+		6752AA321C503B5E00A5E387 /* Place Cell Xibs */ = {
 			isa = PBXGroup;
 			children = (
-				67194A5B1C30C08300DAE805 /* SelectCatagoryTableViewController.swift */,
+				6752AA271C5021C700A5E387 /* PlaceDetailCell.xib */,
+				6752AA2D1C50350600A5E387 /* LikeThisPlaceTableViewCell.xib */,
 			);
-			name = "Main App Views";
+			name = "Place Cell Xibs";
+			sourceTree = "<group>";
+		};
+		6752AA331C503B6900A5E387 /* Place Cell Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				6752AA291C5024E900A5E387 /* PlaceDetailTableViewCell.swift */,
+				6752AA2C1C50350600A5E387 /* LikeThisPlaceTableViewCell.swift */,
+			);
+			name = "Place Cell Implementation";
+			sourceTree = "<group>";
+		};
+		6752AA341C50580200A5E387 /* Parse Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				67194A541C30B9EC00DAE805 /* Authentication.swift */,
+			);
+			name = "Parse Helpers";
+			sourceTree = "<group>";
+		};
+		6752AA351C50580D00A5E387 /* Yelp API */ = {
+			isa = PBXGroup;
+			children = (
+				675463FF1C373731008E071A /* YelpAPI.swift */,
+			);
+			name = "Yelp API";
 			sourceTree = "<group>";
 		};
 		675464051C37638D008E071A /* Supporting Files */ = {
@@ -250,7 +276,6 @@
 		675464061C38147B008E071A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				67FF300B1C39A5B900212350 /* DEYelpImageCache.swift */,
 				67FF30091C398FC500212350 /* MapPlaces.swift */,
 				675464071C38148A008E071A /* Places.swift */,
 			);
@@ -261,7 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				67FF30071C396AC300212350 /* FindViewController.swift */,
-				67F25E981C4EEC0E009CDB80 /* PlaceDetailViewController.swift */,
+				6752AA251C5018AE00A5E387 /* PlaceDetailTableViewController.swift */,
 			);
 			name = "Find View";
 			sourceTree = "<group>";
@@ -270,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				67FF301B1C39D2C200212350 /* CatagorySelectionCell.xib */,
+				6752AA321C503B5E00A5E387 /* Place Cell Xibs */,
 			);
 			name = "Cell Xibs";
 			sourceTree = "<group>";
@@ -278,6 +304,8 @@
 			isa = PBXGroup;
 			children = (
 				67FF30191C39D2B100212350 /* CatagorySelectionCell.swift */,
+				6752AA331C503B6900A5E387 /* Place Cell Implementation */,
+				6752AA301C50352F00A5E387 /* CellWithAccessoryButtonTableViewCell.swift */,
 			);
 			name = "Cell Implementation";
 			sourceTree = "<group>";
@@ -420,10 +448,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6752AA2F1C50350600A5E387 /* LikeThisPlaceTableViewCell.xib in Resources */,
 				67FF300F1C39B28C00212350 /* splash.png in Resources */,
 				67194A251C30943E00DAE805 /* LaunchScreen.storyboard in Resources */,
 				67FF301C1C39D2C200212350 /* CatagorySelectionCell.xib in Resources */,
 				67194A221C30943E00DAE805 /* Assets.xcassets in Resources */,
+				6752AA281C5021C700A5E387 /* PlaceDetailCell.xib in Resources */,
 				67194A1D1C30943E00DAE805 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -573,20 +603,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6752AA2E1C50350600A5E387 /* LikeThisPlaceTableViewCell.swift in Sources */,
+				6752AA261C5018AE00A5E387 /* PlaceDetailTableViewController.swift in Sources */,
 				67FF301A1C39D2B100212350 /* CatagorySelectionCell.swift in Sources */,
 				67FF300A1C398FC500212350 /* MapPlaces.swift in Sources */,
-				67194A5C1C30C08300DAE805 /* SelectCatagoryTableViewController.swift in Sources */,
 				67194A4E1C309E2400DAE805 /* LoginViewController.swift in Sources */,
 				67194A181C30943E00DAE805 /* AppDelegate.swift in Sources */,
 				67194A511C309E2F00DAE805 /* SignUpViewController.swift in Sources */,
 				675464001C373731008E071A /* YelpAPI.swift in Sources */,
-				67FF30031C38AF3700212350 /* InitialViewController.swift in Sources */,
 				67194A551C30B9EC00DAE805 /* Authentication.swift in Sources */,
-				67F25E991C4EEC0E009CDB80 /* PlaceDetailViewController.swift in Sources */,
 				67FF30081C396AC300212350 /* FindViewController.swift in Sources */,
+				6752AA2A1C5024E900A5E387 /* PlaceDetailTableViewCell.swift in Sources */,
+				6752AA311C50352F00A5E387 /* CellWithAccessoryButtonTableViewCell.swift in Sources */,
 				67194A4A1C30991500DAE805 /* SplashViewController.swift in Sources */,
 				675464081C38148A008E071A /* Places.swift in Sources */,
-				67FF300C1C39A5B900212350 /* DEYelpImageCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,7 +627,6 @@
 				675464011C373731008E071A /* YelpAPI.swift in Sources */,
 				67194A301C30943E00DAE805 /* DomoEatsTests.swift in Sources */,
 				67194A561C30B9EC00DAE805 /* Authentication.swift in Sources */,
-				67FF300D1C39A5B900212350 /* DEYelpImageCache.swift in Sources */,
 				675464091C38148A008E071A /* Places.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -608,7 +637,6 @@
 			files = (
 				67194A4F1C309E2400DAE805 /* LoginViewController.swift in Sources */,
 				67194A3B1C30943E00DAE805 /* DomoEatsUITests.swift in Sources */,
-				67194A5D1C30C08300DAE805 /* SelectCatagoryTableViewController.swift in Sources */,
 				67194A521C309E2F00DAE805 /* SignUpViewController.swift in Sources */,
 				67194A4B1C30991500DAE805 /* SplashViewController.swift in Sources */,
 			);

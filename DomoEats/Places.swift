@@ -44,6 +44,20 @@ class Places:NSObject {
         long = data["location"]["coordinate"]["longitude"].double
     }
     
+    func getProperties() -> [String:AnyObject?] {
+        var properties = [String:AnyObject?]()
+        properties["yelpID"] = yelpID
+        properties["name"] = name
+        properties["imageURL"] = imageURL
+        properties["url"] = url
+        properties["starRatingURL"] = starRatingURL
+        properties["location"] = location
+        properties["categories"] = categories
+        properties["latitude"] = latitude
+        properties["long"] = long
+        return properties
+    }
+    
     func getStarRatingImage(completion:(image:UIImage?)->Void) {
         if starRatingURL != nil {
             SDWebImageManager.sharedManager().downloadImageWithURL(NSURL(string: starRatingURL!)!, options: SDWebImageOptions.ContinueInBackground, progress: nil, completed: { (image, error, cacheType, success, url) -> Void in

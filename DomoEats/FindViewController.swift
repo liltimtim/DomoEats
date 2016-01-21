@@ -56,11 +56,10 @@ class FindViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        print(sender)
-        print(segue.destinationViewController)
-        if let destinationView:PlaceDetailViewController = segue.destinationViewController as? PlaceDetailViewController {
+        if let destinationView:PlaceDetailTableViewController = segue.destinationViewController as? PlaceDetailTableViewController {
             if let mapViewPlace:MapPlaces = sender as? MapPlaces {
-                destinationView.place = mapViewPlace
+                destinationView.placeAnnotation = mapViewPlace
+                destinationView.place = mapViewPlace.place
             }
         }
     }
@@ -68,7 +67,6 @@ class FindViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     
     @IBAction func findMePressed(sender: AnyObject) {
         // prime the user to allow location
-//        locationManager.requestWhenInUseAuthorization()
         let region = MKCoordinateRegionMakeWithDistance(mapView.userLocation.coordinate, 2000, 2000)
         mapView.setRegion(region, animated: true)
     }
@@ -110,10 +108,6 @@ class FindViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-        print(error.localizedDescription)
-        // TODO: Display Error to user that we can't find their location!
-        print(manager)
-        print(error)
         if error.domain == kCLErrorDomain {
             switch (error.code) {
             case CLError.Denied.rawValue:
@@ -160,8 +154,7 @@ class FindViewController: UIViewController, CLLocationManagerDelegate, MKMapView
                 let region = MKCoordinateRegionMakeWithDistance(mapView.userLocation.coordinate, 2000, 2000)
                 self.mapView.setRegion(region, animated: true)
                 self.locationManager.stopUpdatingLocation()
-                // TODO: Option, I could begin searching the yelp api GeoCoord now since I have the users location?
-                // this would allow me to autoload suggested places without the user having to touch anything.
+                self.showUserPlaces()
             })
             return nil
         }
@@ -193,7 +186,7 @@ class FindViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         annotations.removeAll()
         for place in places {
             if let coordinates:CLLocationCoordinate2D = place.getCoordinates() {
-                let newAnnotation = MapPlaces(coordinate: coordinates, title: place.name, subtitle: place.location?[0], yelpID: place.yelpID)
+                let newAnnotation = MapPlaces(coordinate: coordinates, title: place.name, subtitle: place.location?[0], yelpID: place.yelpID, place: place)
                 annotations.append(newAnnotation)
             }
         }

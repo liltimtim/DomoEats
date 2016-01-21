@@ -1,16 +1,23 @@
 //
-//  SelectCatagoryTableViewController.swift
+//  PlaceDetailTableViewController.swift
 //  DomoEats
 //
-//  Created by Timothy Barrett on 12/27/15.
-//  Copyright © 2015 Timothy Barrett. All rights reserved.
+//  Created by Timothy Barrett on 1/20/16.
+//  Copyright © 2016 Timothy Barrett. All rights reserved.
 //
 
 import UIKit
-
-class SelectCatagoryTableViewController: UITableViewController {
-    let reuseID:String = "catagorySelectionCell"
-    let places:[String] = ["Hello sample"]
+import MapKit
+class PlaceDetailTableViewController: UITableViewController {
+    var placeProperties:[String:AnyObject?] = [String:AnyObject?]()
+    var placeAnnotation:MapPlaces!
+    var place:Places?
+    
+    @IBOutlet weak var placeMapView: MKMapView!
+    @IBOutlet weak var placeNameLabel: UILabel!
+    @IBOutlet weak var placeRatingImage: UIImageView!
+    private let placePropertyCellReuseID = "placePropertyCell"
+    private let placeLikeCellReuseID = "placeLikeCell"
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,17 +26,23 @@ class SelectCatagoryTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        tableView.registerNib(UINib(nibName: "CatagorySelectionCell", bundle: nil), forCellReuseIdentifier: reuseID)
-        tableView.estimatedRowHeight = 20
-        tableView.rowHeight = UITableViewAutomaticDimension
+        
+        //setup the map view
+        placeMapView.addAnnotation(placeAnnotation)
+        
+        let region = MKCoordinateRegionMakeWithDistance(placeAnnotation.coordinate, 500, 500)
+        self.placeMapView.setRegion(region, animated: false)
+        
+        tableView.registerNib(UINib(nibName: "PlaceDetailCell", bundle: nil), forCellReuseIdentifier: placePropertyCellReuseID)
+        tableView.registerNib(UINib(nibName: "LikeThisTableViewCell", bundle: nil), forCellReuseIdentifier: placeLikeCellReuseID)
 
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        loadPlaceData()
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -38,23 +51,20 @@ class SelectCatagoryTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return places.count
+        return placeProperties.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(reuseID, forIndexPath: indexPath) as! CatagorySelectionCell
-        cell.placeName.text = places[indexPath.row]
-        cell.placeAddressLine1.text = "hello sample address"
-        cell.placeAddressLine2.text = "Hello second line"
-        // Configure the cell...
-
+        
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(placePropertyCellReuseID, forIndexPath: indexPath) as! PlaceDetailTableViewCell
+        
         return cell
     }
 
@@ -104,8 +114,20 @@ class SelectCatagoryTableViewController: UITableViewController {
     }
     */
     
-    func reloadData() {
-        tableView.reloadData()
+    func loadPlaceData() {
+        if place != nil {
+            if place?.name != nil {
+                placeNameLabel.text = place?.name!
+            }
+            place?.getStarRatingImage({ (image) -> Void in
+                self.placeRatingImage.image = image
+            })
+        }
+    }
+    
+    private func refreshHeaderView() {
+        // refresh map view
+        
     }
 
 }

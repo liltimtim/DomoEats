@@ -14,11 +14,13 @@ class MapPlaces:NSObject, MKAnnotation {
     var title: String?
     var subtitle: String?
     var yelpID: String?
-    init(coordinate: CLLocationCoordinate2D, title: String?, subtitle: String?, yelpID:String?) {
+    var place: Places?
+    init(coordinate: CLLocationCoordinate2D, title: String?, subtitle: String?, yelpID:String?, place: Places?) {
         self.coordinate = coordinate
         self.title = title
         self.subtitle = subtitle
         self.yelpID = yelpID
+        self.place = place
     }
     
 }

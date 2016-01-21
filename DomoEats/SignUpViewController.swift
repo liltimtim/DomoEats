@@ -39,20 +39,6 @@ class SignUpViewController: UIViewController {
     }
     @IBAction func signupPressed(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
-//        if validate() {
-//            // initiate signup
-//            print("All Fields were validated")
-//            Authentication.sharedAuth.signUp(withEmail: emailField.text!, withPassword: passwordField.text!, withUsername: "", completion: { (success, error) -> Void in
-//                if success {
-//                    self.dismissViewControllerAnimated(true, completion: nil)
-//                } else {
-//                    // display error with message
-//                    
-//                }
-//            })
-//        } else {
-//            print("One or more fields are invalid")
-//        }
     }
     
     private func validate() -> Bool {
