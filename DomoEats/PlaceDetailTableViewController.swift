@@ -9,15 +9,18 @@
 import UIKit
 import MapKit
 class PlaceDetailTableViewController: UITableViewController {
-    var placeProperties:[String:AnyObject?] = [String:AnyObject?]()
-    var placeAnnotation:MapPlaces!
-    var place:Places?
     
     @IBOutlet weak var placeMapView: MKMapView!
     @IBOutlet weak var placeNameLabel: UILabel!
     @IBOutlet weak var placeRatingImage: UIImageView!
+    var placeProperties:[String:AnyObject?] = [String:AnyObject?]()
+    var placeAnnotation:MapPlaces!
+    var place:Places?
+    var headerView:UIView!
+    private let kTableHeaderHeight: CGFloat = 300.0
     private let placePropertyCellReuseID = "placePropertyCell"
     private let placeLikeCellReuseID = "placeLikeCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,6 +38,17 @@ class PlaceDetailTableViewController: UITableViewController {
         
         tableView.registerNib(UINib(nibName: "PlaceDetailCell", bundle: nil), forCellReuseIdentifier: placePropertyCellReuseID)
         tableView.registerNib(UINib(nibName: "LikeThisTableViewCell", bundle: nil), forCellReuseIdentifier: placeLikeCellReuseID)
+        
+        if place != nil {
+            placeProperties = place!.getProperties()
+        }
+        
+        //setup header view
+        headerView = tableView.tableHeaderView
+        tableView.tableHeaderView = nil
+        tableView.addSubview(headerView)
+        tableView.contentInset = UIEdgeInsets(top: kTableHeaderHeight, left: 0, bottom: 0, right: 0)
+        tableView.contentOffset = CGPoint(x: 0, y: -kTableHeaderHeight)
 
     }
     
@@ -56,13 +70,13 @@ class PlaceDetailTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return placeProperties.count
+        return placeProperties.keys.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        
+        let keys = placeProperties.keys
         let cell = tableView.dequeueReusableCellWithIdentifier(placePropertyCellReuseID, forIndexPath: indexPath) as! PlaceDetailTableViewCell
         
         return cell
@@ -114,6 +128,10 @@ class PlaceDetailTableViewController: UITableViewController {
     }
     */
     
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        updateHeaderView()
+    }
+    
     func loadPlaceData() {
         if place != nil {
             if place?.name != nil {
@@ -122,12 +140,22 @@ class PlaceDetailTableViewController: UITableViewController {
             place?.getStarRatingImage({ (image) -> Void in
                 self.placeRatingImage.image = image
             })
+            tableView.reloadData()
         }
     }
     
     private func refreshHeaderView() {
         // refresh map view
         
+    }
+    
+    private func updateHeaderView() {
+        var headerRect = CGRect(x: 0, y: -kTableHeaderHeight, width: tableView.bounds.width, height: kTableHeaderHeight)
+        if tableView.contentOffset.y < -kTableHeaderHeight {
+            headerRect.origin.y = tableView.contentOffset.y
+            headerRect.size.height = -tableView.contentOffset.y
+        }
+        headerView.frame = headerRect
     }
 
 }

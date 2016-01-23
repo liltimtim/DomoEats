@@ -46,11 +46,8 @@ class Places:NSObject {
     
     func getProperties() -> [String:AnyObject?] {
         var properties = [String:AnyObject?]()
-        properties["yelpID"] = yelpID
         properties["name"] = name
-        properties["imageURL"] = imageURL
-        properties["url"] = url
-        properties["starRatingURL"] = starRatingURL
+        properties["Website"] = url
         properties["location"] = location
         properties["categories"] = categories
         properties["latitude"] = latitude
